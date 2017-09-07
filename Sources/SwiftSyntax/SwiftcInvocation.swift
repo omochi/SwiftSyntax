@@ -85,6 +85,15 @@ func run(_ executable: URL, arguments: [String] = []) -> ProcessResult {
                        stderrData: stderrData)
 }
 
+func runPathGetCommand(_ command: [String]) -> URL? {
+  let url = URL(fileURLWithPath: command[0])
+  let result = run(url, arguments: Array<String>(command.dropFirst()))
+  guard result.wasSuccessful else { return nil }
+  let path = result.stdout.trimmingCharacters(in: .whitespacesAndNewlines)
+  guard !path.isEmpty else { return nil }
+  return URL(fileURLWithPath: path)
+}
+
 /// Finds the dylib or executable which the provided address falls in.
 /// - Parameter dsohandle: A pointer to a symbol in the object file you're
 ///                        looking for. If not provided, defaults to the
@@ -139,18 +148,18 @@ struct SwiftcRunner {
     return swiftcURL
   }
   
+  static func locateXcrunSwiftc() -> URL? {
+    return runPathGetCommand(["/usr/bin/xcrun", "--toolchain", "swift", "--find", "swiftc"])
+  }
+  
   static func locateSystemSwiftc() -> URL? {
-    let url = URL(fileURLWithPath: "/usr/bin/which")
-    let result = run(url, arguments: ["-a", "swiftc"])
-    guard result.wasSuccessful else { return nil }
-    let path = result.stdout.trimmingCharacters(in: .whitespacesAndNewlines)
-    guard !path.isEmpty else { return nil }
-    return URL(fileURLWithPath: path)
+    return runPathGetCommand(["/usr/bin/which", "swiftc"])
   }
   
   static func locateSwiftc() -> URL? {
     return locateSwiftcRelatively() ??
-    locateSystemSwiftc()
+      locateXcrunSwiftc() ??
+      locateSystemSwiftc()
   }
     
 #if os(macOS)
