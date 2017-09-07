@@ -9,9 +9,9 @@ func main() throws {
     }
     
     let path = args[0]
-
-  let source = try Syntax.parse(URL(fileURLWithPath: path))
-
+    
+    let source = try Syntax.parse(URL(fileURLWithPath: path))
+    
     print(source)
 }
 
