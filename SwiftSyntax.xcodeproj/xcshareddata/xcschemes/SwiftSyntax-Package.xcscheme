@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SwiftSyntax::format-example"
+               BuildableName = "format-example"
+               BlueprintName = "format-example"
+               ReferencedContainer = "container:SwiftSyntax.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "SwiftSyntax::SwiftSyntax"
                BuildableName = "SwiftSyntax.framework"
                BlueprintName = "SwiftSyntax"
@@ -29,16 +43,6 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftSyntax::SwiftSyntaxTests"
-               BuildableName = "SwiftSyntaxTests.xctest"
-               BlueprintName = "SwiftSyntaxTests"
-               ReferencedContainer = "container:SwiftSyntax.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
@@ -57,9 +61,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SwiftSyntax::SwiftSyntax"
-            BuildableName = "SwiftSyntax.framework"
-            BlueprintName = "SwiftSyntax"
+            BlueprintIdentifier = "SwiftSyntax::format-example"
+            BuildableName = "format-example"
+            BlueprintName = "format-example"
             ReferencedContainer = "container:SwiftSyntax.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

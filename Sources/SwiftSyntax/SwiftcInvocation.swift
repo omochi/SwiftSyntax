@@ -125,7 +125,7 @@ struct SwiftcRunner {
   ///               - ${target}/
   ///                 - libswiftSwiftSyntax.[dylib|so]
   ///         ```
-  static func locateSwiftc() -> URL? {
+  static func locateSwiftcRelatively() -> URL? {
     guard let libraryPath = findFirstObjectFile() else { return nil }
     let swiftcURL = libraryPath.deletingLastPathComponent()
                                .deletingLastPathComponent()
@@ -138,7 +138,21 @@ struct SwiftcRunner {
     }
     return swiftcURL
   }
-
+  
+  static func locateSystemSwiftc() -> URL? {
+    let url = URL(fileURLWithPath: "/usr/bin/which")
+    let result = run(url, arguments: ["-a", "swiftc"])
+    guard result.wasSuccessful else { return nil }
+    let path = result.stdout.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !path.isEmpty else { return nil }
+    return URL(fileURLWithPath: path)
+  }
+  
+  static func locateSwiftc() -> URL? {
+    return locateSwiftcRelatively() ??
+    locateSystemSwiftc()
+  }
+    
 #if os(macOS)
   /// The location of the macOS SDK, or `nil` if it could not be found.
   static let macOSSDK: String? = {
