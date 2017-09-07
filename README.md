@@ -13,6 +13,8 @@ Install new swift which supports libSyntax API.
 
 https://swift.org/download/#snapshots
 
+And select it in Xcode > Preference > Components > Toolchains.
+
 # Example
 
 ```
