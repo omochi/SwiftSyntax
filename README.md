@@ -27,3 +27,8 @@ This is passingthrough with parse and print example.
     let source = try Syntax.parse(URL(fileURLWithPath: path))
     print(source)
 ```
+
+# License
+
+This repository is fork of apple/swift.
+This is Apache License.
