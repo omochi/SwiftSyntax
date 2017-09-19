@@ -8,25 +8,25 @@ This package can be use from SwiftPM.
 
 # Requirement
 
-Install new swift which supports libSyntax API.
-2017-09-07 snapshot is ok.
+Install newer swift which supports libSyntax API.
+2017-09-18 snapshot is ok.
 
 https://swift.org/download/#snapshots
 
-And select it in Xcode > Preference > Components > Toolchains.
+And specify it via `TOOLCHAINS` environment variable.
 
-# Example
+example
 
 ```
-$ swift run format-example foo.swift
+$ export TOOLCHAINS=org.swift.3020170918a
+$ swift build
 ```
 
-This is passingthrough with parse and print example.
+# Using example
 
-```swift
-    let source = try Syntax.parse(URL(fileURLWithPath: path))
-    print(source)
-```
+See SwiftPack code using SwiftSyntax.
+
+https://github.com/omochi/SwiftPack.git
 
 # License
 
