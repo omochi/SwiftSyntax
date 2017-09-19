@@ -148,17 +148,12 @@ struct SwiftcRunner {
     return swiftcURL
   }
   
-  static func locateXcrunSwiftc() -> URL? {
-    return runPathGetCommand(["/usr/bin/xcrun", "--toolchain", "swift", "--find", "swiftc"])
-  }
-  
   static func locateSystemSwiftc() -> URL? {
     return runPathGetCommand(["/usr/bin/which", "swiftc"])
   }
   
   static func locateSwiftc() -> URL? {
     return locateSwiftcRelatively() ??
-      locateXcrunSwiftc() ??
       locateSystemSwiftc()
   }
     

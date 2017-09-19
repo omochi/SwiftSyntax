@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		OBJ_37 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* main.swift */; };
 		OBJ_45 /* SwiftSyntax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftSyntax::SwiftSyntax::Product" /* SwiftSyntax.framework */; };
 		OBJ_52 /* AtomicCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* AtomicCache.swift */; };
 		OBJ_53 /* RawSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* RawSyntax.swift */; };
@@ -54,7 +53,6 @@
 		OBJ_22 /* SyntaxRewriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxRewriter.swift; sourceTree = "<group>"; };
 		OBJ_23 /* TokenKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenKind.swift; sourceTree = "<group>"; };
 		OBJ_24 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
-		OBJ_26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_28 /* utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = utils; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* AtomicCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicCache.swift; sourceTree = "<group>"; };
@@ -81,15 +79,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_25 /* format-example */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_26 /* main.swift */,
-			);
-			name = "format-example";
-			path = "Sources/format-example";
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_27 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +95,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -115,14 +104,12 @@
 				OBJ_28 /* utils */,
 				OBJ_29 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* SwiftSyntax */,
-				OBJ_25 /* format-example */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -216,7 +203,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_43 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

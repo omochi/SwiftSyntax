@@ -7,19 +7,13 @@ let package = Package(
     products: [
         .library(
             name: "SwiftSyntax",
-            targets: ["SwiftSyntax"]),
-        .executable(
-            name: "format-example",
-            targets: ["format-example"])
+            targets: ["SwiftSyntax"])
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "SwiftSyntax",
-            dependencies: []),
-        .target(
-            name: "format-example",
-            dependencies: ["SwiftSyntax"]),
+            dependencies: [])
     ]
 )
